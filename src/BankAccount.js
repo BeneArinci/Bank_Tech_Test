@@ -1,6 +1,6 @@
 class BankAccount {
-  constructor() {
-    this.balance = 0
+  constructor(balance = 0) {
+    this.balance = balance
     this.transactions = new Transactions()
   }
   showBalance() {
@@ -13,11 +13,12 @@ class BankAccount {
 
   deposit(amount, date = new Date()) {
     this.balance += amount;
-    var updatedbalance = this.showBalance()
-    this.transactions.saveDeposit(date, amount, updatedbalance)
+    // var updatedbalance = this.showBalance()
+    this.transactions.saveDeposit(date, amount, this.showBalance())
   } 
 
-  withdrawal(amount) {
+  withdrawal(amount, date = new Date()) {
     this.balance -= amount; 
+    this.transactions.saveWithdrawal(date, amount, this.showBalance())
   }
 }
