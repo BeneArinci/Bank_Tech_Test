@@ -1,6 +1,7 @@
 class BankAccount {
-  constructor() {
+  constructor(transactions = new Transactions()) {
     this.balance = 0
+    this.transactions = transactions
   }
   showBalance() {
     return this.balance
