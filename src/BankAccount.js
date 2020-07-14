@@ -11,7 +11,11 @@ class BankAccount {
     return this.transactions
   }
 
-  deposit(cash) {
-    this.balance += cash;
+  deposit(amount) {
+    this.balance += amount;
+  }
+
+  withdrawal(amount) {
+    this.balance -= amount; 
   }
 }

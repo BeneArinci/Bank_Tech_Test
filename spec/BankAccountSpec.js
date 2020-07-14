@@ -14,11 +14,21 @@ describe('BankAccount', function() {
 
   describe('deposit', function(){
     beforeEach(function(){
-      bankaccount.deposit(1000, "10/01/2020");
+      bankaccount.deposit(1000);
     });
-    it('increase the value of the current balance by the deposit value', function(){
+    it('increases the value of the current balance by the deposit value', function(){
       expect(bankaccount.showBalance()).toEqual(1000);
     });
   });
+
+  describe('withdrawal', function(){
+    beforeEach(function(){
+      bankaccount.deposit(1000);
+      bankaccount.withdrawal(500);
+    });
+    it('decreases the balance by the withdrawal value', function(){
+      expect(bankaccount.showBalance()).toEqual(500);
+    });
+  })
   
 }); 
