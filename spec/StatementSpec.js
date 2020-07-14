@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 describe("Transactions", function(){
   var statement;
   var transactions;
@@ -13,8 +14,8 @@ describe("Transactions", function(){
   });
 
   it('prints out the transactions in the right format', function(){
-    statement.printHeader()
-    statement.printStatement(transactions.getTransactions())
+    statement.printHeader();
+    statement.printStatement(transactions.getTransactions());
     //expect(statement.print(transactions.getTransactions())).toEqual('x')
   });
   

@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+// eslint-disable-next-line no-unused-vars
 class BankAccount {
   constructor(balance = 0) {
     this.balance = balance;
@@ -5,21 +7,21 @@ class BankAccount {
     this.statement = new Statement();
   }
   showBalance() {
-    return this.balance
+    return this.balance;
   }
 
   showTransactions() {
-    return this.transactions
+    return this.transactions;
   }
 
   deposit(amount, date = new Date()) {
     this.balance += amount;
-    this.transactions.saveDeposit(date, amount, this.showBalance())
+    this.transactions.saveDeposit(date, amount, this.showBalance());
   } 
 
   withdrawal(amount, date = new Date()) {
     this.balance -= amount; 
-    this.transactions.saveWithdrawal(date, amount, this.showBalance())
+    this.transactions.saveWithdrawal(date, amount, this.showBalance());
   }
 
   showStatement(transactions = this.transactions.showTransactions()) {

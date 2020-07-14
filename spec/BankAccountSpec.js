@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 describe('BankAccount', function() {
   var bankaccount;
   beforeEach(function(){

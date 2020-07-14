@@ -1,8 +1,11 @@
+/* eslint-disable no-undef */
 describe("Transactions", function(){
   var transactions;
   var bankaccount;
   var date1;
   var date2;
+  var balance;
+  
 
   beforeEach(function(){
     transactions = new Transactions()
