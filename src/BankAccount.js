@@ -13,7 +13,6 @@ class BankAccount {
 
   deposit(amount, date = new Date()) {
     this.balance += amount;
-    // var updatedbalance = this.showBalance()
     this.transactions.saveDeposit(date, amount, this.showBalance())
   } 
 
