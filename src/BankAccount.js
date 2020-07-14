@@ -10,4 +10,8 @@ class BankAccount {
   showTransactions() {
     return this.transactions
   }
+
+  deposit(cash) {
+    this.balance += cash;
+  }
 }
