@@ -57,6 +57,10 @@ To make sure that ESLint is collaborating with Jasmine spec files, in the ESlint
         "jasmine": true
     },
 ```
+To run tests type in the command line:
+```
+open SpecRunner.html
+```
 
 #### FEATURES
 In order to meet the requirements I decided to use 3 classes:
