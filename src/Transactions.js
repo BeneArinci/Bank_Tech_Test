@@ -21,6 +21,13 @@ class Transactions {
     var day = date.getDate();
     var month = date.getMonth() + 1;
     var year = date.getFullYear();
-    return `${day}/${month}/${year}`;
+    if (this._getMonthLength(month)) {
+      return `${day}/0${month}/${year}`;
+    }
+      return `${day}/${month}/${year}`;
+  }
+
+  _getMonthLength(month) {
+    return month.toString().length === 1;
   }
 }
