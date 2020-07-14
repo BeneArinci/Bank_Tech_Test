@@ -50,11 +50,25 @@ To install ESLint for VSC:
 - download the extension and follow the indicated procedure
 
 To make sure that ESLint is collaborating with Jasmine spec files, in the ESlint.json file make sure you indicate the following:
+```
     "env": {
         "browser": true,
         "es2020": true,
         "jasmine": true
     },
+```
+
+#### FEATURES
+In order to meet the requirements I decided to use 3 classes:
+**BankAccount**, the main class. Used for storing info regarding the balance but using the following (injected) classes for other purposes.
+**Transactions**, storing information about every single transaction inside an array;
+**Statement**, used for printing out the statement.
+
+This is a visual representation of the outcome. Please, consider that every transaction is defaulted to "new Date()" but I've given the possibility to set a specific date as a second argument just for being able to show a proper result:
+
+![alt text](https://github.com/BeneArinci/Bank_Tech_Test/blob/master/img/ConsoleScreenshot.png)
 
 
+#### FUTURE IMPROVEMENTS
+There are multiple new features that can be implemented but, first things first, I would like to improve the test coverage as I haven't been able to test the printing feature.
 
