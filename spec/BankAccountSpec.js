@@ -8,10 +8,6 @@ describe('BankAccount', function() {
     expect(bankaccount.showBalance()).toEqual(0);
   });
 
-  it('has an empty transactions array by default', function(){
-    expect(bankaccount.showTransactions()).toEqual([]);
-  });
-
   describe('deposit', function(){
     beforeEach(function(){
       bankaccount.deposit(1000);
