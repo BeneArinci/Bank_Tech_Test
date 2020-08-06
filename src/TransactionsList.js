@@ -1,21 +1,21 @@
 // eslint-disable-next-line no-unused-vars
 class TransactionsList {
   constructor() {
-    this.transactions = [];
+    this._transactions = [];
   }
 
-  showTransactions() {
-    return this.transactions;
+  transactions() {
+    return this._transactions;
   }
 
   saveDeposit(date, value, updatedbalance) {
     var transactiondate = this._getDateString(date);
-    this.transactions.push(['deposit', `${transactiondate}`, `${value.toFixed(2)}`, `${updatedbalance.toFixed(2)}`]);
+    this._transactions.push(['deposit', `${transactiondate}`, `${value.toFixed(2)}`, `${updatedbalance.toFixed(2)}`]);
   }
 
   saveWithdrawal(date, value, updatedbalance) {
     var transactiondate = this._getDateString(date);
-    this.transactions.push(['withdrawal', `${transactiondate}`, `${value.toFixed(2)}`, `${updatedbalance.toFixed(2)}`]);
+    this._transactions.push(['withdrawal', `${transactiondate}`, `${value.toFixed(2)}`, `${updatedbalance.toFixed(2)}`]);
   }
 
   _getDateString(date) {

@@ -23,30 +23,30 @@ describe("Transactions", function(){
   
   
   it("starts with an empty array used to store transactions", function(){
-    expect(transactions.showTransactions()).toEqual([]);
+    expect(transactions.transactions()).toEqual([]);
   });
 
   it("saves info regarding a deposit, example with 1 number long month", function(){
     spyOn(bankaccount, "getBalance").and.returnValue(1000);
     transactions.saveDeposit(date1, 1000, bankaccount.getBalance());
-    expect(transactions.showTransactions()).toContain(['deposit', '12/01/2020', '1000.00', '1000.00']);
+    expect(transactions.transactions()).toContain(['deposit', '12/01/2020', '1000.00', '1000.00']);
   });
 
   it("saves info regarding a deposit, example with 2 numbers long month", function(){
     spyOn(bankaccount, "getBalance").and.returnValue(1000);
     transactions.saveDeposit(date2, 1000, bankaccount.getBalance());
-    expect(transactions.showTransactions()).toContain(['deposit', '13/12/2020', '1000.00', '1000.00']);
+    expect(transactions.transactions()).toContain(['deposit', '13/12/2020', '1000.00', '1000.00']);
   });
 
   it("saves info regarding a withdrawal, example with 1 number long month", function(){
     spyOn(bankaccount, "getBalance").and.returnValue(700);
     transactions.saveWithdrawal(date1, 300, bankaccount.getBalance());
-    expect(transactions.showTransactions()).toContain(['withdrawal', '12/01/2020', '300.00', '700.00']);
+    expect(transactions.transactions()).toContain(['withdrawal', '12/01/2020', '300.00', '700.00']);
   });
 
   it("saves info regarding a withdrawal, example with 2 numbers long month", function(){
     spyOn(bankaccount, "getBalance").and.returnValue(700);
     transactions.saveWithdrawal(date2, 300, bankaccount.getBalance());
-    expect(transactions.showTransactions()).toContain(['withdrawal', '13/12/2020', '300.00', '700.00']);
+    expect(transactions.transactions()).toContain(['withdrawal', '13/12/2020', '300.00', '700.00']);
   });
 });

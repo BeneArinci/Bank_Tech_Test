@@ -2,29 +2,25 @@
 // eslint-disable-next-line no-unused-vars
 class BankAccount {
   constructor(balance = 0, transactionsList = new TransactionsList(), statement = new Statement()) {
-    this.balance = balance;
-    this.transactions = transactionsList;
+    this._balance = balance;
+    this.transactionsList = transactionsList;
     this.statement = statement;
   }
-  showBalance() {
-    return this.balance;
-  }
-
-  showTransactions() {
-    return this.transactions;
+  balance() {
+    return this._balance;
   }
 
   deposit(amount, date = new Date()) {
-    this.balance += amount;
-    this.transactions.saveDeposit(date, amount, this.showBalance());
+    this._balance += amount;
+    this.transactionsList.saveDeposit(date, amount, this.balance());
   } 
 
   withdrawal(amount, date = new Date()) {
-    this.balance -= amount; 
-    this.transactions.saveWithdrawal(date, amount, this.showBalance());
+    this._balance -= amount; 
+    this.transactionsList.saveWithdrawal(date, amount, this.balance());
   }
 
-  showStatement(transactions = this.transactions.showTransactions()) {
+  showStatement(transactions = this.transactionsList._transactions) {
     this.statement.printHeader();
     this.statement.printStatement(transactions);
   }

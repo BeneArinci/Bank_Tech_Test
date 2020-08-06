@@ -6,7 +6,7 @@ describe('BankAccount', function() {
   });
 
   it('has an empty balance by default', function(){
-    expect(bankaccount.showBalance()).toEqual(0);
+    expect(bankaccount.balance()).toEqual(0);
   });
 
   describe('deposit', function(){
@@ -14,7 +14,8 @@ describe('BankAccount', function() {
       bankaccount.deposit(1000);
     });
     it('increases the value of the current balance by the deposit value', function(){
-      expect(bankaccount.showBalance()).toEqual(1000);
+      console.log(bankaccount.balance())
+      expect(bankaccount.balance()).toEqual(1000);
     });
   });
 
@@ -24,7 +25,7 @@ describe('BankAccount', function() {
       bankaccount.withdrawal(500);
     });
     it('decreases the balance by the withdrawal value', function(){
-      expect(bankaccount.showBalance()).toEqual(500);
+      expect(bankaccount.balance()).toEqual(500);
     });
   })
   
