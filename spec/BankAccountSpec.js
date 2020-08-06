@@ -1,8 +1,12 @@
 /* eslint-disable no-undef */
 describe('BankAccount', function() {
   var bankaccount;
+  var transactionsList;
+  var statement;
   beforeEach(function(){
-    bankaccount = new BankAccount();
+    transactionsList = jasmine.createSpyObj('transactionsList',['saveDeposit','saveWithdrawal']);
+    statement = jasmine.createSpyObj('statement', ['printHeader', 'printStatement'])
+    bankaccount = new BankAccount(0, transactionsList, statement);
   });
 
   it('has an empty balance by default', function(){
@@ -17,6 +21,9 @@ describe('BankAccount', function() {
       console.log(bankaccount.balance())
       expect(bankaccount.balance()).toEqual(1000);
     });
+    it('calls saveDeposit method in transactionsList class', function(){
+      expect(transactionsList.saveDeposit).toHaveBeenCalled();
+    });
   });
 
   describe('withdrawal', function(){
@@ -27,6 +34,21 @@ describe('BankAccount', function() {
     it('decreases the balance by the withdrawal value', function(){
       expect(bankaccount.balance()).toEqual(500);
     });
-  })
+    it('calls saveWithdrawal method in transactionsList class', function(){
+      expect(transactionsList.saveWithdrawal).toHaveBeenCalled();
+    });
+  });
+
+  describe('showStatement', function(){
+    beforeEach(function(){
+      bankaccount.showStatement()
+    });
+    it('calls the printHeader method from statment class', function(){
+      expect(statement.printHeader).toHaveBeenCalled();
+    });
+    it('calls the printStatement method from statment class', function(){
+      expect(statement.printStatement).toHaveBeenCalled();
+    });
+  });
   
 }); 
