@@ -8,7 +8,7 @@ describe("Transactions", function(){
   
 
   beforeEach(function(){
-    transactions = new Transactions()
+    transactions = new TransactionsList()
     bankaccount = {
       setBalance: function(value) {
         balance = value;

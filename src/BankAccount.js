@@ -1,10 +1,10 @@
 /* eslint-disable no-undef */
 // eslint-disable-next-line no-unused-vars
 class BankAccount {
-  constructor(balance = 0) {
+  constructor(balance = 0, transactionsList = new TransactionsList(), statement = new Statement()) {
     this.balance = balance;
-    this.transactions = new Transactions();
-    this.statement = new Statement();
+    this.transactions = transactionsList;
+    this.statement = statement;
   }
   showBalance() {
     return this.balance;
