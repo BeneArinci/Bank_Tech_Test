@@ -6,23 +6,17 @@ class Statement {
   }
   printStatement(transactions) {
     this._getTransactionsList(transactions).forEach(function(transaction){
-      console.log(transaction);
+      console.log(this.formatTransactions(transaction));
     });
 
   }
 
-  _getTransactionsList(transactions) {
-    var transactionsList = []
-    transactions.reverse().forEach(function(transaction){
-      if (transaction[0] == 'deposit') {
-        transactionsList.push(`${transaction[1]} || ${transaction[2]} || || ${transaction[3]}`);
-      }
-      if (transaction[0] == 'withdrawal') {
-        transactionsList.push(`${transaction[1]} || || ${transaction[2]} || ${transaction[3]}`);
-      }
-    });
-    console.log(transactions)
-    console.log(transactionsList)
-    return transactionsList;
+  _formatTransactions(transaction) {
+    if (transaction[0] == 'deposit') {
+      return (`${transaction[1]} || ${transaction[2]} || || ${transaction[3]}`);
+    }
+    if (transaction[0] == 'withdrawal') {
+      return (`${transaction[1]} || || ${transaction[2]} || ${transaction[3]}`);
+    }
   }
 }
