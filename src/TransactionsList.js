@@ -10,12 +10,12 @@ class TransactionsList {
 
   saveDeposit(date, value, updatedbalance) {
     var transactiondate = this._getDateString(date);
-    this.transactions.push(['deposit', `${transactiondate}`, `${value}`, `${updatedbalance}`]);
+    this.transactions.push(['deposit', `${transactiondate}`, `${value.toFixed(2)}`, `${updatedbalance.toFixed(2)}`]);
   }
 
   saveWithdrawal(date, value, updatedbalance) {
     var transactiondate = this._getDateString(date);
-    this.transactions.push(['withdrawal', `${transactiondate}`, `${value}`, `${updatedbalance}`]);
+    this.transactions.push(['withdrawal', `${transactiondate}`, `${value.toFixed(2)}`, `${updatedbalance.toFixed(2)}`]);
   }
 
   _getDateString(date) {

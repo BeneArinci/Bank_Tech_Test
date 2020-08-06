@@ -21,6 +21,8 @@ class Statement {
         transactionsList.push(`${transaction[1]} || || ${transaction[2]} || ${transaction[3]}`);
       }
     });
+    console.log(transactions)
+    console.log(transactionsList)
     return transactionsList;
   }
 }
