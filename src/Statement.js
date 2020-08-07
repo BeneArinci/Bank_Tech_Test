@@ -5,10 +5,9 @@ class Statement {
     console.log('date || credit || debit || balance');
   }
   printStatement(transactions) {
-    this._getTransactionsList(transactions).forEach(function(transaction){
-      console.log(this.formatTransactions(transaction));
-    });
-
+    transactions.forEach(function(transaction){
+      console.log(this._formatTransactions(transaction));
+    }.bind(this));
   }
 
   _formatTransactions(transaction) {
