@@ -5,7 +5,7 @@ class Statement {
     console.log('date || credit || debit || balance');
   }
   printStatement(transactions) {
-    transactions.forEach(function(transaction){
+    transactions.reverse().forEach(function(transaction){
       console.log(this._formatTransactions(transaction));
     }.bind(this));
   }
