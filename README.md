@@ -73,6 +73,3 @@ This is a visual representation of the outcome. Please, consider that every tran
 ![alt text](https://github.com/BeneArinci/Bank_Tech_Test/blob/master/img/ConsoleScreenshot.png)
 
 
-#### FUTURE IMPROVEMENTS
-There are multiple new features that can be implemented but, first things first, I would like to improve the test coverage as I haven't been able to test the printing feature.
-
