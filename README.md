@@ -2,7 +2,7 @@
 #### MY PROJECT
 I have worked on this project as an assignment given to me by Makers.
 The idea was to create a bank account program that is enabling a user to:
-- open a bank account;
+- open a bank account
 - do money deposit and withrawal 
 - print their bank statement in the following format:
 ```
